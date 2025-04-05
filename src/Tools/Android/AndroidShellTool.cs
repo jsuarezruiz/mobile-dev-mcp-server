@@ -24,7 +24,7 @@ namespace MobileDevMcpServer
 
             try
             {
-                string result = Process.ExecuteCommand(command);
+                string result = Process.ExecuteCommand($"adb -s {deviceSerial} shell {command}");
 
                 // Check for security validation failure
                 if (result.StartsWith("Error: Command rejected", StringComparison.OrdinalIgnoreCase))
